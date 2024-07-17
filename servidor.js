@@ -9,6 +9,9 @@ app.get('/', (request, response) => {
 app.get('/index', (request, response) => {
     response.render('conta')
 })
+app.get('/tudonofront', (request, response) => {
+    response.render('rayane')
+})
 const PORTA = 8000
 app.listen(PORTA, () => {
     console.log(`Servidor rodando em http://localhost:${PORTA}`);
