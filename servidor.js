@@ -7,7 +7,11 @@ app.get('/', (request, response) => {
     response.send(`O valor do PI é ${teste}`)
 })
 app.get('/index', (request, response) => {
-    response.render('conta')
+    response.render('conta', {conta: ''})
+})
+app.get('/operacoes', (request, response) => {
+    let soma = 10
+    response.render('conta', {conta: soma})
 })
 app.get('/tudonofront', (request, response) => {
     response.render('rayane')

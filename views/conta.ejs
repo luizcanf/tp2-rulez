@@ -1,13 +1,49 @@
-<html>
-    <script>
-        
-    </script>
-    <body>
-        <form>
-            Digite um número: 
-            <input type="number" id="n1" name="n1">
-            <input type="button" value="Multiplique por 2">
-        </form>
-        <p id="resultado">Aguardando valor...</p>
-    </body>
+<!DOCTYPE html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <script>
+   function soma() {
+    document.getElementById("op").value = '+';
+   }
+   function subtracao() {
+    document.getElementById("op").value = '-';
+   }
+   function multiplicacao() {
+    document.getElementById("op").value = 'x';
+   }
+   function divisao() {
+    document.getElementById("op").value = '/';
+   }
+   function fatorial(n) {
+    document.getElementById("opForm").method = 'post';
+    document.getElementById("opForm").action = '/fat';
+   }
+  </script>
+ </head>
+ <body>
+  <h1>Digite dois números:</h1>
+  <form method="get" action="/operacoes" id="opForm">
+   <label> Número 1: </label>
+   <input id="n1" name="N1"/>
+   <label> Número 2: </label>
+   <input id= "n2" name="N2"/>
+   
+   <input type="hidden" id="op" name="op"/>
+
+   <button type="submit" onclick="fatorial()">Fatorial do Número 1: </button>
+   <button type="submit" onclick="soma()">Somar</button>
+   <button type="submit" onclick="subtracao()">Subtrair</button>
+   <button type="submit" onclick="multiplicacao()">Multiplicar</button>
+   <button type="submit" onclick="divisao()">Dividir</button>
+  </form>
+  <% if (typeof(conta) == 'undefined') { %>
+  <h2>Aguardando valores...</h2>
+  <% } else { %>
+  <h1>Resultado:</h1>
+  <h1 id="resultado">
+    <%=conta%>
+  </h1>
+  <% } %>
+ </body>
 </html>
