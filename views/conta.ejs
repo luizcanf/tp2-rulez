@@ -20,8 +20,10 @@
     document.getElementById("opForm").action = '/fat';
    }
   </script>
+  <link rel="stylesheet" type="text/css" href="index.css">
  </head>
  <body>
+  <%- include("cabecalho")%>
   <h1>Digite dois números:</h1>
   <form method="get" action="/operacoes" id="opForm">
    <label> Número 1: </label>
